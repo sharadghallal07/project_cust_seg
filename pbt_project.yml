@@ -25,7 +25,11 @@ pipelines:
       - datasets/ds_customer_data
       - datasets/ds_prod_details
       - datasets/ds_prod_order
-      outputs: []
+      outputs:
+      - datasets/ds_avg_basket_size
+      - datasets/ds_customer_demographics
+      - datasets/ds_fequency_purchase
+      - datasets/ds_total_purchase_by_cust
     subgraphs: []
     dependencies: {}
 datasets:
@@ -81,6 +85,58 @@ datasets:
         description: ''
         author: sharad.ghallal@cloudaeon.net
         createdAt: '2024-03-19 10:21:51'
+  datasets/ds_total_purchase_by_cust:
+    name: ds_total_purchase_by_cust
+    description: ''
+    author: sharad.ghallal@cloudaeon.net
+    createdAt: '2024-03-19 12:52:21'
+    mode: batch
+    physicalDatasets:
+      Fabric_sharad:
+        fabricId: 10089
+        datasetType: File
+        description: ''
+        author: sharad.ghallal@cloudaeon.net
+        createdAt: '2024-03-19 12:52:21'
+  datasets/ds_fequency_purchase:
+    name: ds_fequency_purchase
+    description: ''
+    author: sharad.ghallal@cloudaeon.net
+    createdAt: '2024-03-19 13:14:01'
+    mode: batch
+    physicalDatasets:
+      Fabric_sharad:
+        fabricId: 10089
+        datasetType: File
+        description: ''
+        author: sharad.ghallal@cloudaeon.net
+        createdAt: '2024-03-19 13:14:01'
+  datasets/ds_avg_basket_size:
+    name: ds_avg_basket_size
+    description: ''
+    author: sharad.ghallal@cloudaeon.net
+    createdAt: '2024-03-19 13:17:17'
+    mode: batch
+    physicalDatasets:
+      Fabric_sharad:
+        fabricId: 10089
+        datasetType: File
+        description: ''
+        author: sharad.ghallal@cloudaeon.net
+        createdAt: '2024-03-19 13:17:17'
+  datasets/ds_customer_demographics:
+    name: ds_customer_demographics
+    description: ''
+    author: sharad.ghallal@cloudaeon.net
+    createdAt: '2024-03-19 13:20:00'
+    mode: batch
+    physicalDatasets:
+      Fabric_sharad:
+        fabricId: 10089
+        datasetType: File
+        description: ''
+        author: sharad.ghallal@cloudaeon.net
+        createdAt: '2024-03-19 13:20:00'
 templates: {}
 jobs: {}
 gemContainer:

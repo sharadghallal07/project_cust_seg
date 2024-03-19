@@ -1,0 +1,18 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: OrderID
+    type: integer
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: avg_items_per_order
+    type: double
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
