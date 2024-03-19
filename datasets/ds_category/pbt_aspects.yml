@@ -1,0 +1,18 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: Category
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: Description
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
