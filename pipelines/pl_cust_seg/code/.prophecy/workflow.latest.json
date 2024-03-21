@@ -962,7 +962,7 @@
         "autoUpdateOnRun" : true
       },
       "properties" : {
-        "script" : "from pyspark.sql.functions import count\n\nout0 = in0.groupBy(\"CustomerID\").agg(count(\"OrderID\").alias(\"Frequency\"))",
+        "script" : "from pyspark.sql.functions import count\n\nout0 = in0.groupBy(\"CustomerID\").count().withColumnRenamed(\"count\", \"Frequency\")",
         "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
         "scriptMethodFooter" : "    return out0"
       }
@@ -1065,7 +1065,7 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "TotalPurchaseAmount",
+              "name" : "sum(Price)",
               "type" : "long",
               "nullable" : true,
               "metadata" : {
@@ -1437,7 +1437,7 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "TotalPurchaseAmount",
+              "name" : "sum(Price)",
               "type" : "long",
               "nullable" : true,
               "metadata" : {
@@ -1454,7 +1454,7 @@
         "autoUpdateOnRun" : true
       },
       "properties" : {
-        "script" : "from pyspark.sql.functions import sum\n\nout0 = in0.groupBy(\"CustomerID\").agg(sum(\"Price\").alias(\"TotalPurchaseAmount\"))",
+        "script" : "from pyspark.sql.functions import sum\n\nout0 = in0.groupBy(\"CustomerID\").sum(\"Price\").alias(\"TotalPurchaseAmount\")",
         "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
         "scriptMethodFooter" : "    return out0"
       }

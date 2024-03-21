@@ -8,6 +8,6 @@ from pl_cust_seg.udfs.UDFs import *
 
 def frequency_by_customer_id(spark: SparkSession, in0: DataFrame) -> DataFrame:
     from pyspark.sql.functions import count
-    out0 = in0.groupBy("CustomerID").agg(count("OrderID").alias("Frequency"))
+    out0 = in0.groupBy("CustomerID").count().withColumnRenamed("count", "Frequency")
 
     return out0

@@ -9,7 +9,7 @@ schema:
       description: ''
       mappings: []
       tags: []
-  - name: TotalPurchaseAmount
+  - name: sum(Price)
     type: long
     nullable: true
     metadata:

@@ -8,6 +8,6 @@ from pl_cust_seg.udfs.UDFs import *
 
 def total_purchase_amount_by_customer(spark: SparkSession, in0: DataFrame) -> DataFrame:
     from pyspark.sql.functions import sum
-    out0 = in0.groupBy("CustomerID").agg(sum("Price").alias("TotalPurchaseAmount"))
+    out0 = in0.groupBy("CustomerID").sum("Price").alias("TotalPurchaseAmount")
 
     return out0
